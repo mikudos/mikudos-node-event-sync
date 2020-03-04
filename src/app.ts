@@ -8,10 +8,16 @@ export declare namespace mikudos {
     }
 }
 
+export interface Scene {
+    instance: { [key: string]: any };
+    info: '';
+}
+
 export class Application extends Mali {
     public settings: any;
     public context: any;
-    public scenes: { [key: string]: any } = {};
+    public sceneName: string = '';
+    public scenes: { [id: string]: Scene } = {};
     public services: { [key: string]: any } = {};
     constructor(
         path: any,
